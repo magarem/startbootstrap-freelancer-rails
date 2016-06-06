@@ -6,9 +6,11 @@ class HomeController < ApplicationController
           
           def initialize
                super
+               
                #logo
-               @logo1 =  Logo.new
-               @logo1.txt = "Marcelo A. Magalhães"
+               @logo1 =  Txtbox.new
+               @logo1.label = "Marcelo A. Magalhães"
+               @logo1.link = "home/index"
 
                #menu
                @menu1 = Menu.new
@@ -17,14 +19,40 @@ class HomeController < ApplicationController
                @menu1.op << { label: "Sobre", link: "#about"}
                @menu1.op << { label: "contato", link: "#contact"}
                @menu1.doTree
+
+               
+               #
+               #  footer
+               #
+
+               #endereço
+               @footer_endereco =  Txtbox.new
+               @footer_endereco.label = "Local"
+               @footer_endereco.body = "Rio de Janeiro - RJ - Brasil"
                 
+               #Social links
+               @sl = SocialLink.new ({
+               	           facebook:   "marcelo.a.magalhaes.5",
+                           googleplus: "marcelo5",
+                           twitter:    "marcelo.a.magalhaes5"})
+
+			   #créditos
+			   @box3 = Txtbox.new
+			   @box3.label = "Créditos"
+			   @box3.body = "Ruby on Rails<br>e tema da <a href='http://startbootstrap.com/'>Start Bootstrap</a>"
+
+			   #copyright
+			   @box4 = Txtbox.new
+			   @box4.label = "Marcelo A. Magalhães - 2016"
+			   
+        
           end
 
           def index
-               @page = Txt.new
+               @page = Txtbox.new
                @page.img = "/assets/profile.png"
                @page.label = "Bem vindo"
-               @page.body << "Desenvolvedor Web"
+               @page.bodyl << "Desenvolvedor Web - Web master"
 
 			   @por = Portfolio.new
 			   @por.item << {
@@ -87,10 +115,10 @@ class HomeController < ApplicationController
 			   	servico: "Programação"
 			   }
 
-			   @sobre = Txt.new
+			   @sobre = Txtbox.new
 			   @sobre.label = "Sobre"
-			   @sobre.body << "d jkakjd sakjdh skjdhas kdjh sdfh skjdfh sdkjfhsd kfjsdh "
-			   @sobre.body << "d jksdfh skjdfh sdkjfhsd kfjslksdj laskdj aslkdj dh "
+			   @sobre.bodyl << "d jkakjd sakjdh skjdhas kdjh sdfh skjdfh sdkjfhsd kfjsdh "
+			   @sobre.bodyl << "d jksdfh skjdfh sdkjfhsd kfjslksdj laskdj aslkdj dh "
 
 			   @contact = Contact.new
 			   
@@ -99,7 +127,7 @@ class HomeController < ApplicationController
          
 
           def contato_do
-              @page = Txt.new
+              @page = Txtbox.new
               @page.label = "Contato"
               @page.body = "Obrigado pelo contato! Retornaremos em breve ;)"
               @page.img = "contact/contact-bg.jpg"

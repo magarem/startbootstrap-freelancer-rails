@@ -1,29 +1,28 @@
 
-class Logo
-     attr_accessor :txt, :slogan, :slogan2, :img
-end
-
-class Txt
+class Txtbox
     
-      attr_accessor :label, :body, :img
+      attr_accessor :label, :bodyl, :body, :img, :link
     
       def initialize
-          @body = Array.new
+          @body = ""
+          @bodyl = Array.new
       end
 
-      def body_
-         txt = ""
-         @body.each do |t|
-            if t == @body.last
-               txt=txt+t
-             else
-               txt=txt+t+"<br>"     
-            end 
-         end
-         return txt
+      def body
+          (@body + @bodyl.join("<br>")).html_safe
       end
+
 end
 
+class SocialLink
+
+      attr_accessor :link
+
+      def initialize l
+          @link = l
+      end
+
+end
 
 
 class Portfolio
