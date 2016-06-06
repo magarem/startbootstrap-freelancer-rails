@@ -93,6 +93,8 @@ class HomeController < ApplicationController
 			   @sobre.body << "d jkakjd sakjdh skjdhas kdjh sdfh skjdfh sdkjfhsd kfjsdh "
 			   @sobre.body << "d jksdfh skjdfh sdkjfhsd kfjslksdj laskdj aslkdj dh "
 
+			   @contact = Contact.new
+			   
           end
 
          
@@ -110,7 +112,8 @@ class HomeController < ApplicationController
               else
                 flash.now[:error] = 'Sua mensagem não pode ser enviada. Favor tentar novamente.'
               end
-              render "page/home"
+              self.index
+              render "home/index"
           end
 
      
