@@ -2,8 +2,10 @@ require "recursos"
 
 class HomeController < ApplicationController
 
+		  attr_accessor :logo1, :menu1
+          
           def initialize
-                super
+               super
                #logo
                @logo1 =  Logo.new
                @logo1.txt = "Marcelo A. Magalhães"
@@ -11,20 +13,18 @@ class HomeController < ApplicationController
                #menu
                @menu1 = Menu.new
                @menu1.setUlClass ("nav navbar-nav navbar-right")
-               @menu1.setOps [
-                               ["Portfólio","#portfolio"],
-                               ["Sobre","#about"],
-                               ["contato","#contact"]
-                             ]
+               @menu1.op << { label: "Portfólio", link: "#portfolio"}
+               @menu1.op << { label: "Sobre", link: "#about"}
+               @menu1.op << { label: "contato", link: "#contact"}
+               @menu1.doTree
+                
           end
 
           def index
                @page = Txt.new
+               @page.img = "/assets/profile.png"
                @page.label = "Bem vindo"
                @page.body << "Desenvolvedor Web"
-
-               @page.img = "/assets/profile.png"
-           
 
 			   @por = Portfolio.new
 			   @por.item << {
@@ -86,7 +86,6 @@ class HomeController < ApplicationController
 			   	data: "10/10/12",
 			   	servico: "Programação"
 			   }
-
 
 			   @sobre = Txt.new
 			   @sobre.label = "Sobre"

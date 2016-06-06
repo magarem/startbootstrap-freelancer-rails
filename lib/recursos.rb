@@ -24,18 +24,7 @@ class Txt
       end
 end
 
-class Menu
 
-      attr_accessor :op
-
-      def initialize
-          @op = []
-      end
-
-      def setOps(ops)
-          @op = ops
-      end
-end
 
 class Portfolio
 
@@ -49,12 +38,14 @@ end
 
 
 class Menu
-   attr_accessor :tela, :ulClass
+
+   attr_accessor :op, :tela, :ulClass
 
    def initialize
+        @op = Array.new
         @tela = ""
         @tree = {}
-        @lnk = []
+        @lnk = Array.new
         @t = 0
         @ulClass = ""
    end
@@ -63,12 +54,12 @@ class Menu
       @ulClass = c
    end
 
-   def setOps(ops)
-          @dirs = ops
-          @dirs.each do |path, p2|
-              @lnk.push p2
+   def doTree
+          @op.each do |t|
+              label = t[:label]
+              @lnk << t[:link]
               current  = @tree
-              path.split("|").inject("") do |sub_path,dir|
+              label.split("|").inject("") do |sub_path,dir|
                     sub_path = File.join(sub_path, dir)
                     current[sub_path] ||= {}
                     current  = current[sub_path]
@@ -82,14 +73,11 @@ class Menu
       @tela = @tela + "#{prefix}<ul class='#{@ulClass}'>"
       node.each_pair do |path, subtree|
         @tela = @tela +  "#{prefix}  <li><a href='#{@lnk[@t]}'>#{File.basename(path)}</a></li>"
-       @t = @t + 1
+       @t += 1
         print_tree(prefix + "  ", subtree) unless subtree.empty?
-
       end
-
       @tela = @tela +  "#{prefix}</ul>"
       @tela
-
     end
 
     def run
