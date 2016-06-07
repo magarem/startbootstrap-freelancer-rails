@@ -18,29 +18,7 @@ class Txtbox
       def body
           (@body + @bodyl.join("<br>")).html_safe
       end
-
 end
-
-class SocialLink
-
-      attr_accessor :link
-
-      def initialize l
-          @link = l
-      end
-
-end
-
-
-class Portfolio
-
-   attr_accessor :item
-
-   def initialize
-        @item = Array.new
-   end
-
-end   
 
 
 class Menu
@@ -89,4 +67,25 @@ class Menu
     def tela
       @tela.html_safe
     end
+end
+
+
+class Portfolio
+
+   attr_accessor :item
+
+   def initialize
+        @item = Array.new
+   end
+
+end   
+
+
+class SocialLink
+
+      attr_accessor :link
+
+      def initialize l
+          @link = l
+      end
 end
