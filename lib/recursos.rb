@@ -1,3 +1,10 @@
+#################################################################
+# Desenvolvido por Marcelo A. Magalhães
+# contato@magaweb.com.br
+# em 07/06/2016
+# Framework para controle do conteúdo vinculado no tema Freelacer
+# do site start bootstrap
+#################################################################
 
 class Txtbox
     
@@ -82,6 +89,4 @@ class Menu
     def tela
       @tela.html_safe
     end
-
 end
-
