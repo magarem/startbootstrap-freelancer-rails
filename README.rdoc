@@ -15,4 +15,4 @@ Foi implementado um conjunto de classes para facilitar a edição do conteúdo d
 
 A idéia é ir aumentando esse conjundo de classes para que ele se torne um framework de gerenciamento de conteúdo de sites em geral funcionando como link para alguma ferramenta de CMS.
 
-Críticas e contriuições são muito bem vindas
+Críticas e contriuições são muito bem vindas :)
