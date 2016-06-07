@@ -49,7 +49,7 @@ class Menu
         @ulClass = ""
    end
 
-   def setUlClass (c)
+   def setUlClass c
       @ulClass = c
    end
 
@@ -79,8 +79,8 @@ class Menu
       @tela
     end
 
-    def run
-      @tela = print_tree "", @tree
+    def tela
+      @tela.html_safe
     end
 
 end

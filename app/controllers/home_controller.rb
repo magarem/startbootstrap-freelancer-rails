@@ -1,37 +1,40 @@
 require "recursos"
 
 class HomeController < ApplicationController
-
-		  attr_accessor :logo1, :menu1
           
           def initialize
+
                super
-               
+
+               ###################################################
+               # Header
+               ###################################################
+
                #logo
-               @logo1 =  Txtbox.new
-               @logo1.label = "Marcelo A. Magalhães"
-               @logo1.link = "home/index"
+               @logo =  Txtbox.new
+               @logo.label = "Marcelo A. Magalhães"
+               @logo.link = "#page-top"
 
                #menu
-               @menu1 = Menu.new
-               @menu1.setUlClass ("nav navbar-nav navbar-right")
-               @menu1.op << { label: "Portfólio", link: "#portfolio"}
-               @menu1.op << { label: "Sobre", link: "#about"}
-               @menu1.op << { label: "contato", link: "#contact"}
-               @menu1.doTree
+               @menu = Menu.new
+               @menu.setUlClass ("nav navbar-nav navbar-right")
+               @menu.op << { label: "Portfólio", link: "#portfolio"}
+               @menu.op << { label: "Sobre",     link: "#about"}
+               @menu.op << { label: "Contato",   link: "#contact"}
+               @menu.doTree
 
                
-               #
-               #  footer
-               #
+               ###################################################
+               # footer
+               ###################################################
 
                #endereço
-               @footer_endereco =  Txtbox.new
-               @footer_endereco.label = "Local"
-               @footer_endereco.body = "Rio de Janeiro - RJ - Brasil"
+               @box1 =  Txtbox.new
+               @box1.label = "Local"
+               @box1.body = "Rio de Janeiro - RJ - Brasil"
                 
                #Social links
-               @sl = SocialLink.new ({
+               @box2 = SocialLink.new ({
                	           facebook:   "marcelo.a.magalhaes.5",
                            googleplus: "marcelo5",
                            twitter:    "marcelo.a.magalhaes5"})
@@ -39,21 +42,24 @@ class HomeController < ApplicationController
 			   #créditos
 			   @box3 = Txtbox.new
 			   @box3.label = "Créditos"
-			   @box3.body = "Ruby on Rails<br>e tema da <a href='http://startbootstrap.com/'>Start Bootstrap</a>"
+			   @box3.body = "Ruby on Rails,<br>tema <a href='http://blackrockdigital.github.io/startbootstrap-freelancer/'>Freelancer</a>"
 
 			   #copyright
 			   @box4 = Txtbox.new
 			   @box4.label = "Marcelo A. Magalhães - 2016"
 			   
-        
           end
 
+          
           def index
+               
                @page = Txtbox.new
                @page.img = "/assets/profile.png"
                @page.label = "Bem vindo"
                @page.bodyl << "Desenvolvedor Web - Web master"
 
+			   
+			   # Portfólio
 			   @por = Portfolio.new
 			   @por.item << {
 			   	img: "/assets/portfolio/cabin.png",
@@ -115,23 +121,20 @@ class HomeController < ApplicationController
 			   	servico: "Programação"
 			   }
 
+			   # Sobre
 			   @sobre = Txtbox.new
 			   @sobre.label = "Sobre"
-			   @sobre.bodyl << "d jkakjd sakjdh skjdhas kdjh sdfh skjdfh sdkjfhsd kfjsdh "
-			   @sobre.bodyl << "d jksdfh skjdfh sdkjfhsd kfjslksdj laskdj aslkdj dh "
+			   @sobre.bodyl << "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dolor arcu, suscipit at turpis id, dictum hendrerit lectus. Suspendisse sed tempor nibh. Nunc dignissim risus nec mauris porttitor placerat. Ut sodales ligula vel lorem pretium finibus. Nam id sodales metus. Suspendisse maximus accumsan magna."
+			   @sobre.bodyl << "Nam ut facilisis mauris. Nulla varius pulvinar lorem, sit amet porttitor lacus pulvinar eu. Pellentesque non cursus neque, vel tristique mauris. Proin tincidunt ut sapien id suscipit. Vestibulum sed pellentesque lorem. Cras malesuada libero tincidunt venenatis ultrices. Pellentesque ac pretium turpis, eu bibendum dolor. "
 
+			   # Contact
 			   @contact = Contact.new
 			   
           end
 
          
-
           def contato_do
-              @page = Txtbox.new
-              @page.label = "Contato"
-              @page.body = "Obrigado pelo contato! Retornaremos em breve ;)"
-              @page.img = "contact/contact-bg.jpg"
-              
+		      # Envio dos dados do formulário de contato      
               @contact = Contact.new(params[:contact])
               @contact.request = request
               if @contact.deliver
