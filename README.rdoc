@@ -1,28 +1,18 @@
-== README
+== Versão do tema Freelacer do site Start Bootstrap
+(http://startbootstrap.com/template-overviews/freelancer/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+O tema original foi dividido em arquivos menores para facilitar a organização e edição.
 
-Things you may want to cover:
+Foi implementado um conjunto de classes para facilitar a edição do conteúdo do tema que estão no arquivo recursos.rb no diretório /lib, as classes são:
 
-* Ruby version
+* TxtBox - Para vincular textos e imagens em espaços determinados no template da view.
 
-* System dependencies
+* Menu - Classe para organizar os itens do menu (nessa classe também podem ser definidos submenus, apesar de nesse template específico essa opção não existir).
 
-* Configuration
+* Portfolio - Uma classe para controlar o conteúdo que vai ser mostrado na área de Portfólio do site.
 
-* Database creation
+* SocialLink - Para vincular os endereços dos sites sociais do freelancer que aparecem nos icones no rodapé da página.
 
-* Database initialization
+A idéia é ir aumentando esse conjundo de classes para que ele se torne um framework de gerenciamento de conteúdo de sites em geral funcionando como link para alguma ferramenta de CMS.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Críticas e contriuições são muito bem vindas :)
