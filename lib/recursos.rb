@@ -89,6 +89,4 @@ class Menu
     def tela
       @tela.html_safe
     end
-
 end
-
