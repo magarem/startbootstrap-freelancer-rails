@@ -1,4 +1,4 @@
-== Versão do tema Freelacer do site Start Bootstrap
+== Versão Ruby on Rails do tema Freelacer do site Start Bootstrap
 (http://startbootstrap.com/template-overviews/freelancer/)
 
 O tema original foi dividido em arquivos menores para facilitar a organização e edição.
