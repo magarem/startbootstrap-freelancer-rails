@@ -6,18 +6,58 @@
 # do site start bootstrap
 #################################################################
 
-class Txtbox
-    
-      attr_accessor :label, :bodyl, :body, :img, :link
-    
-      def initialize
-          @body = ""
-          @bodyl = Array.new
-      end
 
-      def body
-          (@body + @bodyl.join("<br>")).html_safe
-      end
+class Collection 
+
+  def load val
+    if val.class == Hash 
+      return loadHash val
+    end
+
+    if val.class == String
+      return loadJsonFile val
+    end
+  end
+
+  def loadHash data
+    # JSON.parse(data.to_json, object_class: OpenStruct)
+    OpenStruct.new(data)
+  end
+
+  def loadJson data
+    JSON.parse(data, object_class: OpenStruct)
+  end
+
+  def loadJsonFile file
+    data_file = File.read("#{Rails.root}/public/"+file)
+    JSON.parse(data_file, object_class: OpenStruct)
+  end
+end
+
+
+class Portfolio 
+
+    attr_accessor :items
+
+    def initialize (string)
+      @items = Collection.new.load(string)
+    end 
+
+end 
+
+
+class Txtbox 
+
+    attr_accessor :items
+
+    def initialize (string)
+      @items = Collection.new.loadHash(string)
+    end 
+
+    # def display_body
+    #     return (@body + @bodyl.join("<br>")).html_safe
+    # end
+
 end
 
 
@@ -70,22 +110,11 @@ class Menu
 end
 
 
-class Portfolio
-
-   attr_accessor :item
-
-   def initialize
-        @item = Array.new
-   end
-
-end   
-
-
 class SocialLink
 
-      attr_accessor :link
+      attr_accessor :items
 
-      def initialize l
-          @link = l
-      end
+      def initialize (string)
+         @items = Collection.new.load(string)
+      end 
 end

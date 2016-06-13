@@ -4,32 +4,32 @@
         <div class="container">
             <div class="row">
                 <div class="footer-col col-md-4">
-                    <h3><%=@box1.label%></h3>
-                    <p><%=@box1.body%></p>
+                    <h3><%=@box1.items.label%></h3>
+                    <p><%=@box1.items.body%></p>
                 </div>
                 <div class="footer-col col-md-4">
                     <h3>Pela Web</h3>
                     <ul class="list-inline">
                         <li>
-                            <a href="<%=@box2.link[:facebook]%>" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            <a href="<%=@box2.items.facebook%>" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
                         </li>
                         <li>
-                            <a href="<%=@box2.link[:googleplus]%>" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                            <a href="<%=@box2.items.googleplus%>" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
                         </li>
                         <li>
-                            <a href="<%=@box2.link[:twitter]%>" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            <a href="<%=@box2.items.twitter%>" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
                         </li>
                         <li>
-                            <a href="<%=@box2.link[:linkedin]%>" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                            <a href="<%=@box2.items.linkedin%>" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
                         </li>
                         <li>
-                            <a href="<%=@box2.link["dribbble"]%>" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
+                            <a href="<%=@box2.items.dribbble%>" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
                         </li>
                     </ul>
                 </div>
                 <div class="footer-col col-md-4">
-                    <h3><%=@box3.label%></h3>
-                    <p><%=@box3.body%></p>
+                    <h3><%=@box3.items.label%></h3>
+                    <p><%=@box3.items.body.html_safe%></p>
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    Copyright &copy; <%=@box4.label%>
+                    Copyright &copy; <%=@box4.items.label%>
                 </div>
             </div>
         </div>

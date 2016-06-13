@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="row">
-          <% @por.item.each_with_index do |i, index| %>
+          <% @port.items.each_with_index do |i, index| %>
             <div class="col-sm-4 portfolio-item">
                 <a href="#portfolioModal<%=index%>" class="portfolio-link" data-toggle="modal">
                     <div class="caption">
@@ -16,7 +16,7 @@
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img src="<%=i[:img]%>" class="img-responsive" alt="">
+                    <img src="<%=i.img%>" class="img-responsive" alt="">
                 </a>
             </div>
           <% end %>

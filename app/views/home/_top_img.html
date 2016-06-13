@@ -3,12 +3,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive" src="<%=@page.img %>" alt="">
+                    <img class="img-responsive" src="<%=@page.items.img %>" alt="">
                     <div class="intro-text">
-                        <span class="name"><%=@page.label %></span>
+                        <span class="name"><%=@page.items.label %></span>
                         <hr class="star-light">
                         <span class="skills"> 
-                          <%=@page.body.html_safe%>
+                          <%=@page.items.body.html_safe%>
                         </span>
                     </div>
                 </div>
