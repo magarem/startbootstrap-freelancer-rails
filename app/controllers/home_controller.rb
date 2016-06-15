@@ -36,12 +36,12 @@ class HomeController < ApplicationController
 
     def portfolio
         #portfólio
-        @port = Portfolio.new "portfolio.json"
+        @port = Portfolio.new "portfolio.yaml"
     end
 
     def sobre
         #sobre
-        @sobre =  Txtbox.new({
+        @sobre = Txtbox.new({
           label: "Sobre",           
           bodyl: [
             "<i>Lorem</i> ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dolor arcu, suscipit at turpis id, dictum hendrerit lectus. Suspendisse sed tempor nibh. Nunc dignissim risus nec mauris porttitor placerat. Ut sodales ligula vel lorem pretium finibus. Nam id sodales metus. Suspendisse maximus accumsan magna.",

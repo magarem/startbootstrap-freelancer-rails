@@ -1,0 +1,69 @@
+
+#### Testes
+site
+	info
+		label  : Freelancer
+		desc   : para desenvolvedor
+	moldura
+		tema   : freelancer_bootstrap
+		header  
+			logo   : Marcelo Magalhães
+				menu 
+					label : top_menu
+					ops 
+						- label : Home,
+						  link  : /index
+						
+						- label : Quem somos
+						  link  : /index
+						
+						- label : Contato
+						  link  : /index
+		footer
+			 quemsou_resumo : Sou muito legal
+			 social_links
+					- label : Facebook
+					  link  : /index
+					
+					- label : Twiter
+					  link  : /index	
+					
+					- label : Contato
+					  link  : index
+	
+	paginas
+			label : Home
+			body
+				obj
+					tipo : slideshow
+					attribs
+						label   : slide_home
+						efeito  : 2
+						painels
+							id : 1,
+							 "img" : "painel1.jpg",
+							 "link" : "link1.htm"},
+							{"id" : 2,
+							 "img" : "painel2.jpg",
+							 "link" : "link1.htm"},
+						    {"id" : 3,
+							 "img" : "painel3.jpg",
+							 "link" : "link1.htm"}
+							]
+						}
+				   }
+
+			}}
+		]
+
+		}
+
+
+	}
+}
+}
+
+
+
+
+}

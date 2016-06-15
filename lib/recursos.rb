@@ -5,9 +5,11 @@
 # Framework para controle do conteúdo vinculado no tema Freelacer
 # do site start bootstrap
 #################################################################
-
+require 'yaml'
 
 class Collection 
+
+  attr_accessor :data, :a
 
   def load val
     if val.class == Hash 
@@ -15,7 +17,8 @@ class Collection
     end
 
     if val.class == String
-      return loadJsonFile val
+      if val.include? ".json" then return loadJsonFile val end
+      if val.include? ".yaml" then return loadYamlFile val end
     end
   end
 
@@ -31,6 +34,14 @@ class Collection
   def loadJsonFile file
     data_file = File.read("#{Rails.root}/public/"+file)
     JSON.parse(data_file, object_class: OpenStruct)
+  end
+
+  def loadYamlFile file  
+    #@a = 10
+    data = YAML.load_file("#{Rails.root}/public/"+file)
+    #byebug
+    JSON.parse(data.to_json, object_class: OpenStruct)
+
   end
 end
 
