@@ -24,14 +24,8 @@ class HomeController < ApplicationController
         })
          
         #menu
-        @menu = Menu.new
-        @menu.setUlClass ("nav navbar-nav navbar-right")
-        @menu.op = [
-          { label: "Portfólio", link: "#portfolio"},
-          { label: "Sobre",     link: "#about"},
-          { label: "Contato",   link: "#contact"}
-        ]
-        @menu.doTree
+        @menu = Menu.new "menu.yaml"
+       
     end
 
     def portfolio

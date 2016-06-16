@@ -1,0 +1,11 @@
+label : top_menu
+style_class_ul : nav navbar-nav navbar-right
+ops : 
+  - label : Portfólio
+    link  : \#portfolio
+
+  - label : Sobre
+    link  : \#about
+
+  - label : Contato
+    link  : \#contact
